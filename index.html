@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grand Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">🎖️</div>
+    <h1 class="title">Grand Voting Competition</h1>
+    <p class="subtitle">Sierra Leone 2025</p>
+    <button onclick="loginAdmin()" class="admin-btn">Admin Login</button>
+  </header>
+  <main class="main-content">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalVotes">0</div>
+          <div class="stat-label">Total Votes</div>
+        </div>
+      </div>
+      <form id="votingForm" class="voting-card">
+        <h2 class="section-title">Cast Your Vote</h2>
+        <input id="voterName" class="form-input" placeholder="Full Name" required />
+        <input id="voterPhone" class="form-input" placeholder="+232XXXXXXXX" required />
+        <select id="category" class="form-select" required>
+          <option value="">Select a category</option>
+          <option value="beauty">Beauty Contest</option>
+          <option value="youth">Youth Leadership</option>
+        </select>
+        <div id="contestantsGrid" class="contestants-grid"></div>
+        <div class="payment-methods">
+          <div class="payment-method" data-method="mobile_money">📱 Mobile Money</div>
+          <div class="payment-method" data-method="bank_transfer">🏦 Bank Transfer</div>
+        </div>
+        <button type="submit" class="submit-btn">Submit Vote</button>
+      </form>
+      <div id="successMessage" class="success-message hidden"></div>
+      <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+  </main>
+  <section id="adminSection" class="hidden admin-panel">
+    <h2>Admin Dashboard</h2>
+    <button onclick="downloadCSV()">📥 Export CSV</button>
+    <table id="votesTable">
+      <thead>
+        <tr>
+          <th>#</th><th>Name</th><th>Phone</th><th>Category</th><th>Contestant</th><th>Payment</th><th>Txn ID</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
