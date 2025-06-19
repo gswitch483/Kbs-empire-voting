@@ -1,0 +1,15 @@
+# Firebase
+.firebase/
+firebase-debug.log
+.firebaser
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+
+# Env files (if added later)
+.env
+.env.local
